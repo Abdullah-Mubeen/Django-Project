@@ -1,0 +1,54 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>{% block title %}{% endblock %}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 leading-normal tracking-normal">
+		<nav class="bg-gray-800 shadow-lg">
+			<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+				<div class="relative flex items-center justify-between h-16">
+					<!-- Logo -->
+					<div class="absolute inset-y-0 left-0 flex items-center">
+						<a href="#" class="text-white text-lg font-semibold">Chai's Project</a>
+					</div>
+		
+					<!-- Navigation Links -->
+					<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-end">
+						<div class="hidden sm:block sm:ml-6">
+							<div class="flex space-x-4">
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+							</div>
+						</div>
+					</div>
+		
+					<!-- Mobile Menu Button -->
+					<div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+						<button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+
+		
+		<div class="container">
+			{% block content %}
+			
+			{% endblock %}
+		</div>
+
+	</body>
+</html>
