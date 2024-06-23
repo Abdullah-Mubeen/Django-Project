@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+ 
+{% block title %}
+Chai aur Tweets
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div class="absolute top-24 left-0 right-0 z-0 text-9xl font-bold text-red-400 text-center opacity-15 pointer-events-none">
+        DANGER ZONE
+    </div>
+
+    <div class="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden mx-4 md:mx-auto">
+        <div class="py-4 px-6 bg-red-600">
+            <h1 class="text-2xl font-bold text-white text-center">
+                Are you sure you want to delete the tweet?
+            </h1>
+        </div>
+
+        <div class="p-6">
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                <div class="flex justify-center space-x-4">
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center transition duration-300">
+                        <span>Delete</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform translate-x-0 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a.75.75 0 0 1 .53.22l4.25 4.25a.75.75 0 0 1-1.06 1.06L11 5.06V13a.75.75 0 1 1-1.5 0V5.06L6.28 8.53a.75.75 0 0 1-1.06-1.06l4.25-4.25A.75.75 0 0 1 10 3z" />
+                            <path fill-rule="evenodd" d="M3.75 4a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h11.5a.75.75 0 0 0 .75-.75V4.75a.75.75 0 0 0-.75-.75H3.75zM3 4.75C3 4.335 3.336 4 3.75 4h11.5c.414 0 .75.336.75.75v11.5a.75.75 0 0 1-.75.75H3.75a.75.75 0 0 1-.75-.75V4.75z" />
+                        </svg>
+                    </button>
+                    <a href="{% url 'tweet_list' %}" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full flex items-center hover:bg-gray-300 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a.75.75 0 0 1 .53.22l4.25 4.25a.75.75 0 0 1-1.06 1.06L11 5.06V13a.75.75 0 1 1-1.5 0V5.06L6.28 8.53a.75.75 0 0 1-1.06-1.06l4.25-4.25A.75.75 0 0 1 10 3z" />
+                            <path fill-rule="evenodd" d="M3.75 4a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h11.5a.75.75 0 0 0 .75-.75V4.75a.75.75 0 0 0-.75-.75H3.75zM3 4.75C3 4.335 3.336 4 3.75 4h11.5c.414 0 .75.336.75.75v11.5a.75.75 0 0 1-.75.75H3.75a.75.75 0 0 1-.75-.75V4.75z" />
+                        </svg>
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
