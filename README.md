@@ -38,17 +38,49 @@ To set up the project on your local machine, follow these steps:
 3. **Install the Dependencies**
 
     ```bash
-    pip install -r requirements
+    pip install -r requirements.txt
     ```
 
-4. **Run Migrations**
+4. **Set Up Environment Variables**
+
+    Create a `.env` file in the root directory of your project and add your environment-specific variables there. For example:
+
+    ```
+    SECRET_KEY=your_secret_key
+    DEBUG=True
+    ALLOWED_HOSTS=localhost,127.0.0.1
+    ```
+
+5. **Run Migrations**
 
     ```bash
     python manage.py migrate
     ```
 
-5. **Start the Development Server**
+6. **Create a Superuser**
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+    Follow the prompts to create a superuser account.
+
+7. **Start the Development Server**
 
     ```bash
     python manage.py runserver
     ```
+
+8. **Access the Admin Panel**
+
+    Open your web browser and go to `http://127.0.0.1:8000/admin/`. Use the superuser credentials you created to log in.
+
+## Additional Information
+
+- **Gitignore**: The project has a `.gitignore` file configured to exclude virtual environments, Python compiled files, Django database files, environment variables, and VS Code settings.
+- **Environment Variables**: Make sure to configure your `.env` file properly as it's ignored by git and won't be included in your repository.
+
+## Troubleshooting
+
+- If you encounter any issues, ensure all prerequisites are met and the virtual environment is activated.
+- For further assistance, refer to the Django documentation or raise an issue on the project repository.
